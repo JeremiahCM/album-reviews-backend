@@ -10,10 +10,10 @@ namespace AlbumReviewsAPI.Controllers
     [Route("api/[controller]")]
     public class AlbumReviewsController : ControllerBase
     {
-        private readonly AlbumReviewsAPIDbContext dbContext;
+        private readonly DatabaseContext dbContext;
         private readonly IDeezerService deezerService;
 
-        public AlbumReviewsController(AlbumReviewsAPIDbContext dbContext, IDeezerService deezerService)
+        public AlbumReviewsController(DatabaseContext dbContext, IDeezerService deezerService)
         {
             this.dbContext = dbContext;
             this.deezerService = deezerService;
@@ -79,7 +79,7 @@ namespace AlbumReviewsAPI.Controllers
                 Review = review
             };
 
-            await dbContext.AlbumReviews.AddAsync(albumReview);
+            dbContext.AlbumReviews.Add(albumReview);
             await dbContext.SaveChangesAsync();
 
             return Ok(albumReview);
