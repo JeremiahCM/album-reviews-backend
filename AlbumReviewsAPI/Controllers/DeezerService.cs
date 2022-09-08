@@ -7,7 +7,7 @@ namespace AlbumReviewsAPI.Controllers
     /// </summary>
     public interface IDeezerService
     {
-        Task<string> GetAlbumFromDeezer(string artistName, string albumName);
+        Task<string?> GetAlbumFromDeezer(string artistName, string albumName);
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ namespace AlbumReviewsAPI.Controllers
 
                 var idJson = JObject.Parse(idContent);
 
-                var id = (int)idJson["data"][0]["album"]["id"];
+                var id = (int)idJson["data"]![0]!["album"]!["id"]!;
 
                 var detailsRequest = new HttpRequestMessage(HttpMethod.Get,
                     $"album/{id}");

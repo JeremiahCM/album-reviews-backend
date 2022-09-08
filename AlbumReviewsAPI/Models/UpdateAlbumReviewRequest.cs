@@ -5,8 +5,8 @@
     /// </summary>
     public class UpdateAlbumReviewRequest
     {
-        public string ArtistName { get; set; }
-        public string AlbumName { get; set; }
-        public string Review { get; set; }
+        public string ArtistName { get; set; } = string.Empty;
+        public string AlbumName { get; set; } = string.Empty;
+        public string Review { get; set; } = string.Empty;
     }
 }

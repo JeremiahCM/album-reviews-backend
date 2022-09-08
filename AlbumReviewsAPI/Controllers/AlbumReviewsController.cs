@@ -63,10 +63,10 @@ namespace AlbumReviewsAPI.Controllers
         {
             var detailsContent = await deezerService.GetAlbumFromDeezer(artistName, albumName);
 
-            var detailsJson = JObject.Parse(detailsContent);
-            var detailsReleaseDate = (string)detailsJson["release_date"];
-            var detailsGenre = (string)detailsJson["genres"]["data"][0]["name"];
-            var detailsNumTracks = (int)detailsJson["nb_tracks"];
+            var detailsJson = JObject.Parse(detailsContent!);
+            var detailsReleaseDate = (string)detailsJson["release_date"]!;
+            var detailsGenre = (string)detailsJson["genres"]!["data"]![0]!["name"]!;
+            var detailsNumTracks = (int)detailsJson["nb_tracks"]!;
 
             var albumReview = new AlbumReview()
             {
@@ -107,10 +107,10 @@ namespace AlbumReviewsAPI.Controllers
 
             var detailsContent = await deezerService.GetAlbumFromDeezer(artistName, albumName);
 
-            var detailsJson = JObject.Parse(detailsContent);
-            var detailsReleaseDate = (string)detailsJson["release_date"];
-            var detailsGenre = (string)detailsJson["genres"]["data"][0]["name"];
-            var detailsNumTracks = (int)detailsJson["nb_tracks"];
+            var detailsJson = JObject.Parse(detailsContent!);
+            var detailsReleaseDate = (string)detailsJson["release_date"]!;
+            var detailsGenre = (string)detailsJson["genres"]!["data"]![0]!["name"]!;
+            var detailsNumTracks = (int)detailsJson["nb_tracks"]!;
 
             albumReview.ArtistName = artistName;
             albumReview.AlbumName = albumName;
