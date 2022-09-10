@@ -1,7 +1,7 @@
-﻿using AlbumReviewsAPI.Models;
+﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AlbumReviewsAPI.Data
+namespace Domain.Data
 {
     public class DatabaseContext : DbContext
     {

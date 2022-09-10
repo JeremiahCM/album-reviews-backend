@@ -116,3 +116,6 @@ F:\GitHub\Learning\NZMSA\MSA-2022-Phase-2\2. Backend\submission-api\AlbumReviews
 F:\GitHub\Learning\NZMSA\MSA-2022-Phase-2\2. Backend\submission-api\AlbumReviewsAPI\AlbumReviewsUnitTesting\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 F:\GitHub\Learning\NZMSA\MSA-2022-Phase-2\2. Backend\submission-api\AlbumReviewsAPI\AlbumReviewsUnitTesting\bin\Debug\net6.0\AlbumReviewsAPI.dll
 F:\GitHub\Learning\NZMSA\MSA-2022-Phase-2\2. Backend\submission-api\AlbumReviewsAPI\AlbumReviewsUnitTesting\bin\Debug\net6.0\AlbumReviewsAPI.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsUnitTesting\obj\Debug\net6.0\AlbumReviewsUnitTesting.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsUnitTesting\obj\Debug\net6.0\refint\AlbumReviewsUnitTesting.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsUnitTesting\obj\Debug\net6.0\AlbumReviewsUnitTesting.pdb

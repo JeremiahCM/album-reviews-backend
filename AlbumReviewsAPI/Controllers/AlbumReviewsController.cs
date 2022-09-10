@@ -1,5 +1,5 @@
-﻿using AlbumReviewsAPI.Data;
-using AlbumReviewsAPI.Models;
+﻿using Domain.Data;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;

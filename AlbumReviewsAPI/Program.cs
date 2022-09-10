@@ -1,5 +1,5 @@
 using AlbumReviewsAPI.Controllers;
-using AlbumReviewsAPI.Data;
+using Domain.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

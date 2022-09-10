@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AlbumReviewsAPI.Models
+namespace Domain.Models
 {
     public class AlbumReview
     {
