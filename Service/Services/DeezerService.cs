@@ -1,15 +1,13 @@
 ﻿using Newtonsoft.Json.Linq;
+using Service.IServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace AlbumReviewsAPI.Controllers
+namespace Service.Services
 {
-    /// <summary>
-    /// Interface for the Deezer Service
-    /// </summary>
-    public interface IDeezerService
-    {
-        Task<string?> GetAlbumFromDeezer(string artistName, string albumName);
-    }
-
     /// <summary>
     /// The DeezerService holds the function for calling the Deezer API
     /// It calls twice:
