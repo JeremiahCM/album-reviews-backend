@@ -12,11 +12,13 @@ namespace AlbumReviewsAPI.Controllers
     public class AlbumReviewsController : ControllerBase
     {
         private readonly DatabaseContext dbContext;
+        private readonly ICustomService<AlbumReview> albumReviewsService;
         private readonly IDeezerService deezerService;
 
-        public AlbumReviewsController(DatabaseContext dbContext, IDeezerService deezerService)
+        public AlbumReviewsController(DatabaseContext dbContext, ICustomService<AlbumReview> albumReviewsService, IDeezerService deezerService)
         {
             this.dbContext = dbContext;
+            this.albumReviewsService = albumReviewsService;
             this.deezerService = deezerService;
         }
 
@@ -28,7 +30,7 @@ namespace AlbumReviewsAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAlbumReviews()
         {
-            return Ok(await dbContext.AlbumReviews.ToListAsync());
+            return Ok(await albumReviewsService.GetAll());
         }
 
         /// <summary>
@@ -41,7 +43,7 @@ namespace AlbumReviewsAPI.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> GetAlbumReview([FromRoute] Guid id)
         {
-            var albumReview = await dbContext.AlbumReviews.FindAsync(id);
+            var albumReview = await albumReviewsService.Get(id);
 
             if (albumReview == null)
             {
@@ -80,8 +82,7 @@ namespace AlbumReviewsAPI.Controllers
                 Review = review
             };
 
-            dbContext.AlbumReviews.Add(albumReview);
-            await dbContext.SaveChangesAsync();
+            albumReviewsService.Insert(albumReview);
 
             return Ok(albumReview);
         }
@@ -99,7 +100,7 @@ namespace AlbumReviewsAPI.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> UpdateAlbumReview([FromRoute] Guid id, string artistName, string albumName, string review)
         {
-            var albumReview = await dbContext.AlbumReviews.FindAsync(id);
+            var albumReview = await albumReviewsService.Get(id);
 
             if (albumReview == null)
             {
@@ -120,7 +121,7 @@ namespace AlbumReviewsAPI.Controllers
             albumReview.NumTracks = detailsNumTracks;
             albumReview.Review = review;
 
-            await dbContext.SaveChangesAsync();
+            albumReviewsService.Update(albumReview);
 
             return Ok(albumReview);
         }
@@ -143,8 +144,8 @@ namespace AlbumReviewsAPI.Controllers
                 return NotFound();
             }
 
-            dbContext.Remove(albumReview);
-            await dbContext.SaveChangesAsync();
+            albumReviewsService.Remove(albumReview);
+
             return Ok(albumReview);
         }
     }

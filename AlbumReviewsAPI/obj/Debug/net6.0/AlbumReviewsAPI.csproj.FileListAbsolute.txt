@@ -90,3 +90,7 @@ F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsApi\obj\Debug\net6.0\
 F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsApi\obj\Debug\net6.0\ref\AlbumReviewsAPI.dll
 F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsAPI\bin\Debug\net6.0\Domain.dll
 F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsAPI\bin\Debug\net6.0\Domain.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsAPI\bin\Debug\net6.0\Repository.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsAPI\bin\Debug\net6.0\Service.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsAPI\bin\Debug\net6.0\Service.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\AlbumReviewsAPI\bin\Debug\net6.0\Repository.pdb

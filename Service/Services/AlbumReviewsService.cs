@@ -18,26 +18,13 @@ namespace Service.Services
             this.albumReviewsRepository = albumReviewsRepository;
         }
 
-        public void Delete(AlbumReview albumReview)
-        {
-            try
-            {
-                if (albumReview != null)
-                {
-                    albumReviewsRepository.Delete(albumReview);
-                    albumReviewsRepository.SaveChanges();
-                }
-            } catch (Exception)
-            {
-                throw;
-            }
-        }
+        
 
-        public AlbumReview Get(int id)
+        public async Task<AlbumReview> Get(Guid id)
         {
             try
             {
-                var albumReview = albumReviewsRepository.Get(id);
+                var albumReview = await albumReviewsRepository.Get(id);
                 if (albumReview != null)
                 {
                     return albumReview;
@@ -51,11 +38,11 @@ namespace Service.Services
             }
         }
 
-        public IEnumerable<AlbumReview> GetAll()
+        public async Task<IEnumerable<AlbumReview>> GetAll()
         {
             try
             {
-                var albumReviews = albumReviewsRepository.GetAll();
+                var albumReviews = await albumReviewsRepository.GetAll();
                 if (albumReviews != null)
                 {
                     return albumReviews;
@@ -84,13 +71,13 @@ namespace Service.Services
             }
         }
 
-        public void Remove(AlbumReview albumReview)
+        public void Update(AlbumReview albumReview)
         {
             try
             {
                 if (albumReview != null)
                 {
-                    albumReviewsRepository.Remove(albumReview);
+                    albumReviewsRepository.Update(albumReview);
                     albumReviewsRepository.SaveChanges();
                 }
             }
@@ -100,13 +87,28 @@ namespace Service.Services
             }
         }
 
-        public void Update(AlbumReview albumReview)
+        public void Delete(AlbumReview albumReview)
         {
             try
             {
                 if (albumReview != null)
                 {
-                    albumReviewsRepository.Update(albumReview);
+                    albumReviewsRepository.Delete(albumReview);
+                    albumReviewsRepository.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public void Remove(AlbumReview albumReview)
+        {
+            try
+            {
+                if (albumReview != null)
+                {
+                    albumReviewsRepository.Remove(albumReview);
                     albumReviewsRepository.SaveChanges();
                 }
             }

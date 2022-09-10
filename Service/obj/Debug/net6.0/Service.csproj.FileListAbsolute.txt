@@ -1,0 +1,17 @@
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Service.deps.json
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Service.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Service.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Domain.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Repository.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Repository.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\bin\Debug\net6.0\Domain.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\refint\Service.dll
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\Service.pdb
+F:\GitHub\Learning\NZMSA\album-reviews-backend\Service\obj\Debug\net6.0\ref\Service.dll

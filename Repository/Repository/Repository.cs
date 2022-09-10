@@ -26,14 +26,14 @@ namespace Repository.Repository
             dbContext.SaveChanges();
         }
 
-        public T Get(int Id)
+        public async Task<T> Get(Guid Id)
         {
-            return albumReviews.SingleOrDefault(c => c.Id.Equals(Id))!;
+            return await albumReviews.FirstAsync(c => c.Id.Equals(Id));
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return albumReviews.AsEnumerable();
+            return await albumReviews.ToListAsync();
         }
 
         public void Insert(T albumReview)
@@ -43,7 +43,7 @@ namespace Repository.Repository
                 throw new ArgumentNullException("album review");
             }
             albumReviews.Add(albumReview);
-            dbContext.SaveChanges();
+            dbContext.SaveChangesAsync();
         }
 
         public void Remove(T albumReview)
@@ -53,11 +53,12 @@ namespace Repository.Repository
                 throw new ArgumentNullException("album review");
             }
             albumReviews.Remove(albumReview);
+            dbContext.SaveChangesAsync();
         }
 
         public void SaveChanges()
         {
-            dbContext.SaveChanges();
+            dbContext.SaveChangesAsync();
         }
 
         public void Update(T albumReview)
@@ -67,7 +68,7 @@ namespace Repository.Repository
                 throw new ArgumentNullException("album review");
             }
             albumReviews.Update(albumReview);
-            dbContext.SaveChanges();
+            dbContext.SaveChangesAsync();
         }
     }
 }
