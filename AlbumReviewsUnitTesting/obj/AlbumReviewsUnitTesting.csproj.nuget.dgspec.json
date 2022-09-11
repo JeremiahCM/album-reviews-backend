@@ -122,6 +122,15 @@
             "projectReferences": {
               "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj": {
                 "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj"
+              },
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj"
+              },
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj"
+              },
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj"
               }
             }
           }
@@ -159,6 +168,10 @@
             "coverlet.collector": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.4.2, )"
             }
           },
           "imports": [

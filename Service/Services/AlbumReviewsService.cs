@@ -18,13 +18,11 @@ namespace Service.Services
             this.albumReviewsRepository = albumReviewsRepository;
         }
 
-        
-
-        public async Task<AlbumReview> Get(Guid id)
+        public async Task<AlbumReview> Get(Guid Id)
         {
             try
             {
-                var albumReview = await albumReviewsRepository.Get(id);
+                var albumReview = await albumReviewsRepository.Get(Id);
                 if (albumReview != null)
                 {
                     return albumReview;
@@ -38,7 +36,7 @@ namespace Service.Services
             }
         }
 
-        public async Task<IEnumerable<AlbumReview>> GetAll()
+        public async Task<List<AlbumReview>> GetAll()
         {
             try
             {

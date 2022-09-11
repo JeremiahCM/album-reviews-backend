@@ -11,13 +11,11 @@ namespace AlbumReviewsAPI.Controllers
     [Route("api/[controller]")]
     public class AlbumReviewsController : ControllerBase
     {
-        private readonly DatabaseContext dbContext;
         private readonly ICustomService<AlbumReview> albumReviewsService;
         private readonly IDeezerService deezerService;
 
-        public AlbumReviewsController(DatabaseContext dbContext, ICustomService<AlbumReview> albumReviewsService, IDeezerService deezerService)
+        public AlbumReviewsController(ICustomService<AlbumReview> albumReviewsService, IDeezerService deezerService)
         {
-            this.dbContext = dbContext;
             this.albumReviewsService = albumReviewsService;
             this.deezerService = deezerService;
         }
@@ -137,7 +135,7 @@ namespace AlbumReviewsAPI.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> DeleteAlbumReview(Guid id)
         {
-            var albumReview = await dbContext.AlbumReviews.FindAsync(id);
+            var albumReview = await albumReviewsService.Get(id);
 
             if (albumReview == null)
             {

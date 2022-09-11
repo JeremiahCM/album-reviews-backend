@@ -9,8 +9,8 @@ namespace Service.IServices
 {
     public interface ICustomService <T> where T: class 
     {
-        Task<IEnumerable<T>> GetAll();
-        Task<T> Get(Guid id);
+        Task<List<T>> GetAll();
+        Task<T> Get(Guid Id);
         void Insert(T albumReview);
         void Update(T albumReview);
         void Delete(T albumReview);

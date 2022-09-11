@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ohatnBINlbvzsfiiZ5WHCgYk6h57ausxPBVIX75yzMXYxETgwEyZn5qIPTNFmWCVbDlYG46/bKay7eCmzG5VPQ==",
+  "dgSpecHash": "8Srv0pCVdcljZQAbUIPD9cKny5GRRZ7IPIVzaKdFYz6+FiV0t+q9An5GB3D2Ahjc7aACHF6ObkZYv1SBj5Vlhw==",
   "success": true,
   "projectFilePath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsUnitTesting\\AlbumReviewsUnitTesting.csproj",
   "expectedPackageFiles": [
@@ -54,7 +54,9 @@
     "C:\\Users\\Jeremiah\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
     "C:\\Users\\Jeremiah\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Jeremiah\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\Jeremiah\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+    "C:\\Users\\Jeremiah\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\Jeremiah\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\Jeremiah\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512"
   ],
   "logs": []
 }

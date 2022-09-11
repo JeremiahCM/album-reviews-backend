@@ -926,6 +926,28 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "xunit.abstractions/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.extensibility.core/2.4.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "xunit.abstractions": "2.0.3"
+        },
+        "compile": {
+          "lib/netstandard1.1/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/xunit.core.dll": {}
+        }
+      },
       "AlbumReviewsAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2923,6 +2945,42 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "xunit.abstractions/2.0.3": {
+      "sha512": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "type": "package",
+      "path": "xunit.abstractions/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/xunit.abstractions.dll",
+        "lib/net35/xunit.abstractions.xml",
+        "lib/netstandard1.0/xunit.abstractions.dll",
+        "lib/netstandard1.0/xunit.abstractions.xml",
+        "lib/netstandard2.0/xunit.abstractions.dll",
+        "lib/netstandard2.0/xunit.abstractions.xml",
+        "xunit.abstractions.2.0.3.nupkg.sha512",
+        "xunit.abstractions.nuspec"
+      ]
+    },
+    "xunit.extensibility.core/2.4.2": {
+      "sha512": "W1BoXTIN1C6kpVSMw25huSet25ky6IAQUNovu3zGOGN/jWnbgSoTyCrlIhmXSg0tH5nEf8q7h3OjNHOjyu5PfA==",
+      "type": "package",
+      "path": "xunit.extensibility.core/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "_content/logo-128-transparent.png",
+        "lib/net452/xunit.core.dll",
+        "lib/net452/xunit.core.dll.tdnet",
+        "lib/net452/xunit.core.xml",
+        "lib/net452/xunit.runner.tdnet.dll",
+        "lib/net452/xunit.runner.utility.net452.dll",
+        "lib/netstandard1.1/xunit.core.dll",
+        "lib/netstandard1.1/xunit.core.xml",
+        "xunit.extensibility.core.2.4.2.nupkg.sha512",
+        "xunit.extensibility.core.nuspec"
+      ]
+    },
     "AlbumReviewsAPI/1.0.0": {
       "type": "project",
       "path": "../AlbumReviewsAPI/AlbumReviewsAPI.csproj",
@@ -2947,12 +3005,16 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AlbumReviewsAPI >= 1.0.0",
+      "Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.3.1",
       "Moq >= 4.18.2",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.3.0",
       "NUnit3TestAdapter >= 4.2.1",
-      "coverlet.collector >= 3.1.2"
+      "Repository >= 1.0.0",
+      "Service >= 1.0.0",
+      "coverlet.collector >= 3.1.2",
+      "xunit.extensibility.core >= 2.4.2"
     ]
   },
   "packageFolders": {
@@ -2984,6 +3046,15 @@
           "projectReferences": {
             "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj": {
               "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj"
+            },
+            "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj"
+            },
+            "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj": {
+              "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj"
+            },
+            "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj": {
+              "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj"
             }
           }
         }
@@ -3021,6 +3092,10 @@
           "coverlet.collector": {
             "target": "Package",
             "version": "[3.1.2, )"
+          },
+          "xunit.extensibility.core": {
+            "target": "Package",
+            "version": "[2.4.2, )"
           }
         },
         "imports": [

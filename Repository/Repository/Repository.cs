@@ -28,10 +28,10 @@ namespace Repository.Repository
 
         public async Task<T> Get(Guid Id)
         {
-            return await albumReviews.FirstAsync(c => c.Id.Equals(Id));
+            return await albumReviews.FirstAsync(ar => ar.Id.Equals(Id));
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
             return await albumReviews.ToListAsync();
         }

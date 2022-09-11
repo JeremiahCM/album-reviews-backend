@@ -4,7 +4,7 @@ namespace Repository.IRepository
 {
     public interface IRepository <T> where T : AlbumReview
     {
-        Task<IEnumerable<T>> GetAll ();
+        Task<List<T>> GetAll ();
         Task<T> Get (Guid Id);
         void Insert(T albumReview);
         void Update (T albumReview);
