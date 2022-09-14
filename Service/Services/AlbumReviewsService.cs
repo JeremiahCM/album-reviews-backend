@@ -18,7 +18,7 @@ namespace Service.Services
             this.albumReviewsRepository = albumReviewsRepository;
         }
 
-        public async Task<AlbumReview> Get(Guid Id)
+        public async Task<AlbumReview?> Get(Guid Id)
         {
             try
             {

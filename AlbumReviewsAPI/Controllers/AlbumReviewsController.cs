@@ -62,9 +62,13 @@ namespace AlbumReviewsAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAlbumReview(string artistName, string albumName, string review)
         {
-            var detailsContent = await deezerService.GetAlbumFromDeezer(artistName, albumName);
+            var detailsJson = await deezerService.GetAlbumFromDeezer(artistName, albumName);
 
-            var detailsJson = JObject.Parse(detailsContent!);
+            if (detailsJson == null)
+            {
+                return BadRequest(detailsJson);
+            }
+
             var detailsReleaseDate = (string)detailsJson["release_date"]!;
             var detailsGenre = (string)detailsJson["genres"]!["data"]![0]!["name"]!;
             var detailsNumTracks = (int)detailsJson["nb_tracks"]!;
@@ -105,9 +109,13 @@ namespace AlbumReviewsAPI.Controllers
                 return NotFound();
             }
 
-            var detailsContent = await deezerService.GetAlbumFromDeezer(artistName, albumName);
+            var detailsJson = await deezerService.GetAlbumFromDeezer(artistName, albumName);
 
-            var detailsJson = JObject.Parse(detailsContent!);
+            if (detailsJson == null)
+            {
+                return BadRequest(detailsJson);
+            }
+
             var detailsReleaseDate = (string)detailsJson["release_date"]!;
             var detailsGenre = (string)detailsJson["genres"]!["data"]![0]!["name"]!;
             var detailsNumTracks = (int)detailsJson["nb_tracks"]!;
