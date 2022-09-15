@@ -11,13 +11,11 @@ namespace AlbumReviewsAPI.Controllers
     [Route("api/[controller]")]
     public class AlbumReviewsController : ControllerBase
     {
-        private readonly DatabaseContext dbContext;
         private readonly ICustomService<AlbumReview> albumReviewsService;
         private readonly IDeezerService deezerService;
 
-        public AlbumReviewsController(DatabaseContext dbContext, ICustomService<AlbumReview> albumReviewsService, IDeezerService deezerService)
+        public AlbumReviewsController(ICustomService<AlbumReview> albumReviewsService, IDeezerService deezerService)
         {
-            this.dbContext = dbContext;
             this.albumReviewsService = albumReviewsService;
             this.deezerService = deezerService;
         }
@@ -64,9 +62,13 @@ namespace AlbumReviewsAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAlbumReview(string artistName, string albumName, string review)
         {
-            var detailsContent = await deezerService.GetAlbumFromDeezer(artistName, albumName);
+            var detailsJson = await deezerService.GetAlbumFromDeezer(artistName, albumName);
 
-            var detailsJson = JObject.Parse(detailsContent!);
+            if (detailsJson == null)
+            {
+                return BadRequest(detailsJson);
+            }
+
             var detailsReleaseDate = (string)detailsJson["release_date"]!;
             var detailsGenre = (string)detailsJson["genres"]!["data"]![0]!["name"]!;
             var detailsNumTracks = (int)detailsJson["nb_tracks"]!;
@@ -107,9 +109,13 @@ namespace AlbumReviewsAPI.Controllers
                 return NotFound();
             }
 
-            var detailsContent = await deezerService.GetAlbumFromDeezer(artistName, albumName);
+            var detailsJson = await deezerService.GetAlbumFromDeezer(artistName, albumName);
 
-            var detailsJson = JObject.Parse(detailsContent!);
+            if (detailsJson == null)
+            {
+                return BadRequest(detailsJson);
+            }
+
             var detailsReleaseDate = (string)detailsJson["release_date"]!;
             var detailsGenre = (string)detailsJson["genres"]!["data"]![0]!["name"]!;
             var detailsNumTracks = (int)detailsJson["nb_tracks"]!;
@@ -137,7 +143,7 @@ namespace AlbumReviewsAPI.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> DeleteAlbumReview(Guid id)
         {
-            var albumReview = await dbContext.AlbumReviews.FindAsync(id);
+            var albumReview = await albumReviewsService.Get(id);
 
             if (albumReview == null)
             {

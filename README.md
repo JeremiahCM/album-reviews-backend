@@ -14,3 +14,5 @@ This developed API allows you to write an album review, passing in the details f
 This backend project includes the following advanced features
 * Onion structure - clear separation of DB access layer and API layer
 * Usage of EF Core
+* Comprehensive Unit Testing
+* Usage of Fluent Validation / Fluent Assertions

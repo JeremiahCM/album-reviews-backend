@@ -28,10 +28,10 @@ namespace Repository.Repository
 
         public async Task<T> Get(Guid Id)
         {
-            return await albumReviews.FirstAsync(c => c.Id.Equals(Id));
+            return await albumReviews.FirstOrDefaultAsync(ar => ar.Id.Equals(Id));
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
             return await albumReviews.ToListAsync();
         }
@@ -40,7 +40,7 @@ namespace Repository.Repository
         {
             if (albumReview == null)
             {
-                throw new ArgumentNullException("album review");
+                throw new ArgumentNullException("album review insert");
             }
             albumReviews.Add(albumReview);
             dbContext.SaveChangesAsync();
@@ -50,7 +50,7 @@ namespace Repository.Repository
         {
             if (albumReview == null)
             {
-                throw new ArgumentNullException("album review");
+                throw new ArgumentNullException("album review remove");
             }
             albumReviews.Remove(albumReview);
             dbContext.SaveChangesAsync();
@@ -65,7 +65,7 @@ namespace Repository.Repository
         {
             if (albumReview == null)
             {
-                throw new ArgumentNullException("album review");
+                throw new ArgumentNullException("album review update");
             }
             albumReviews.Update(albumReview);
             dbContext.SaveChangesAsync();

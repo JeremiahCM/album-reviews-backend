@@ -23,7 +23,7 @@ namespace Service.Services
             _client = client;
         }
 
-        public async Task<string?> GetAlbumFromDeezer(string artistName, string albumName)
+        public async Task<JObject?> GetAlbumFromDeezer(string artistName, string albumName)
         {
             var idRequest = new HttpRequestMessage(HttpMethod.Get,
                 $"search?q=artist:\"{artistName}\"album:\"{albumName}\"");
@@ -45,7 +45,10 @@ namespace Service.Services
 
                 if (detailsResponse.IsSuccessStatusCode)
                 {
-                    return await detailsResponse.Content.ReadAsStringAsync();
+                    var detailsContent = await detailsResponse.Content.ReadAsStringAsync();
+                    var detailsJson = JObject.Parse(detailsContent);
+
+                    return detailsJson;
                 }
 
                 else

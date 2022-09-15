@@ -1,10 +1,12 @@
-﻿namespace Service.IServices
+﻿using Newtonsoft.Json.Linq;
+
+namespace Service.IServices
 {
     /// <summary>
     /// Interface for the Deezer Service
     /// </summary>
     public interface IDeezerService
     {
-        Task<string?> GetAlbumFromDeezer(string artistName, string albumName);
+        Task<JObject?> GetAlbumFromDeezer(string artistName, string albumName);
     }
 }
