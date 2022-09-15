@@ -13,7 +13,7 @@ namespace Repository.Repository
         public Repository(DatabaseContext dbContext)
         {
             this.dbContext = dbContext;
-            this.albumReviews = this.dbContext.Set<T>();
+            albumReviews = this.dbContext.Set<T>();
         }
 
         public void Delete(T albumReview)
@@ -26,7 +26,7 @@ namespace Repository.Repository
             dbContext.SaveChanges();
         }
 
-        public async Task<T> Get(Guid Id)
+        public async Task<T?> Get(Guid Id)
         {
             return await albumReviews.FirstOrDefaultAsync(ar => ar.Id.Equals(Id));
         }
