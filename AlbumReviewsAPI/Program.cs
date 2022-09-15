@@ -1,6 +1,10 @@
-using AlbumReviewsAPI.Controllers;
-using AlbumReviewsAPI.Data;
+using Domain.Data;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Repository.IRepository;
+using Repository.Repository;
+using Service.IServices;
+using Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +15,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add database context for the in-memory database
+// Add database context for the SQLite database
 
-builder.Services.AddDbContext<AlbumReviewsAPIDbContext>(options => options.UseInMemoryDatabase("AlbumReviewsDb"));
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+// Add the repository and album reviews service for use in the API
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<ICustomService<AlbumReview>, AlbumReviewsService>();
 
 // Add the DeezerService for use in the API
 

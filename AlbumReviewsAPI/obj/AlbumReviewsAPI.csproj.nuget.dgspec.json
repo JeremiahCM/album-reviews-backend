@@ -1,17 +1,109 @@
 {
   "format": 1,
   "restore": {
-    "F:\\GitHub\\Learning\\NZMSA\\MSA-2022-Phase-2\\2. Backend\\submission-api\\AlbumReviewsAPI\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj": {}
+    "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj": {}
   },
   "projects": {
-    "F:\\GitHub\\Learning\\NZMSA\\MSA-2022-Phase-2\\2. Backend\\submission-api\\AlbumReviewsAPI\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj": {
+    "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\GitHub\\Learning\\NZMSA\\MSA-2022-Phase-2\\2. Backend\\submission-api\\AlbumReviewsAPI\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj",
+        "projectUniqueName": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj",
         "projectName": "AlbumReviewsAPI",
-        "projectPath": "F:\\GitHub\\Learning\\NZMSA\\MSA-2022-Phase-2\\2. Backend\\submission-api\\AlbumReviewsAPI\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj",
+        "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\AlbumReviewsAPI.csproj",
         "packagesPath": "C:\\Users\\Jeremiah\\.nuget\\packages\\",
-        "outputPath": "F:\\GitHub\\Learning\\NZMSA\\MSA-2022-Phase-2\\2. Backend\\submission-api\\AlbumReviewsAPI\\AlbumReviewsAPI\\obj\\",
+        "outputPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\AlbumReviewsAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jeremiah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj"
+              },
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Jeremiah\\.nuget\\packages\\",
+        "outputPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeremiah\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,17 +132,23 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.7, )"
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.8, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
             }
           },
           "imports": [
@@ -64,9 +162,122 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj",
+        "projectName": "Repository",
+        "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Jeremiah\\.nuget\\packages\\",
+        "outputPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jeremiah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj",
+        "projectName": "Service",
+        "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\Jeremiah\\.nuget\\packages\\",
+        "outputPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jeremiah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj": {
+                "projectPath": "F:\\GitHub\\Learning\\NZMSA\\album-reviews-backend\\Repository\\Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
