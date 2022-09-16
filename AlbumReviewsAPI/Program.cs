@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 // Add database context for the SQLite database
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseSqlite("Data Source=./sqlite.db")
 );
 
 // Add the repository and album reviews service for use in the API
