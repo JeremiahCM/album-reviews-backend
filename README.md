@@ -16,3 +16,4 @@ This backend project includes the following advanced features
 * Usage of EF Core
 * Comprehensive Unit Testing
 * Usage of Fluent Validation / Fluent Assertions
+* Deployment using a CI/CD pipeline to the cloud
