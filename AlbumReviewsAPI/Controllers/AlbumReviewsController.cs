@@ -8,7 +8,6 @@ using Service.IServices;
 namespace AlbumReviewsAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
     public class AlbumReviewsController : ControllerBase
     {
         private readonly ICustomService<AlbumReview> albumReviewsService;
@@ -26,6 +25,7 @@ namespace AlbumReviewsAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("[controller]")]
         public async Task<IActionResult> GetAllAlbumReviews()
         {
             return Ok(await albumReviewsService.GetAll());
@@ -38,7 +38,7 @@ namespace AlbumReviewsAPI.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("{id:guid}")]
+        [Route("[controller]/get/{id:guid}")]
         public async Task<IActionResult> GetAlbumReview([FromRoute] Guid id)
         {
             var albumReview = await albumReviewsService.Get(id);
@@ -60,6 +60,7 @@ namespace AlbumReviewsAPI.Controllers
         /// <param name="review"></param>
         /// <returns></returns>
         [HttpPost]
+        [Route("[controller]/post")]
         public async Task<IActionResult> AddAlbumReview(string artistName, string albumName, string review)
         {
             var detailsJson = await deezerService.GetAlbumFromDeezer(artistName, albumName);
@@ -99,7 +100,7 @@ namespace AlbumReviewsAPI.Controllers
         /// <param name="review"></param>
         /// <returns></returns>
         [HttpPut]
-        [Route("{id:guid}")]
+        [Route("[controller]/put/{id:guid}")]
         public async Task<IActionResult> UpdateAlbumReview([FromRoute] Guid id, string artistName, string albumName, string review)
         {
             var albumReview = await albumReviewsService.Get(id);
@@ -140,7 +141,7 @@ namespace AlbumReviewsAPI.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("{id:guid}")]
+        [Route("[controller]/delete/{id:guid}")]
         public async Task<IActionResult> DeleteAlbumReview(Guid id)
         {
             var albumReview = await albumReviewsService.Get(id);
