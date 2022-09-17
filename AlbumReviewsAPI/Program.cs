@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 // Add database context for the SQLite database
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseSqlite("Data Source=./sqlite.db")
 );
 
 // Add the repository and album reviews service for use in the API
@@ -38,11 +38,8 @@ builder.Services.AddHttpClient<IDeezerService, DeezerService>(client =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
